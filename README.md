@@ -1,6 +1,6 @@
 # MyCustomerSSM
 ```html
-基于SSM框架技术的客户信息管理<br/>
+基于SSM框架技术的客户信息管理
   涉及技术要点<br/>
   1、spring,springmvc,mybatis框架<br/>
   2、分页查询（物理分页）<br/>
