@@ -99,4 +99,6 @@ public interface CustomerMapper {
     List<Customer> findAllCustomer();
     
     List<Customer> findCustDividePage(Page page);
+    
+    List<Customer> findCustomerByConds(Customer customer);
 }

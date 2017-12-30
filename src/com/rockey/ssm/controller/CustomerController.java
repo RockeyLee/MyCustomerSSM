@@ -15,6 +15,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
+import com.rockey.ssm.controller.validation.IFindCustomerByConds;
 import com.rockey.ssm.po.Customer;
 import com.rockey.ssm.po.ModifyCustomer;
 import com.rockey.ssm.po.Page;
@@ -34,16 +36,12 @@ public class CustomerController {
 	}
 	
 	@RequestMapping("insertNewCustomer")
-	public String insertNewCustomer(Model model,@Validated Customer customer,BindingResult bindingResult) throws Exception{
+	public String insertNewCustomer(Model model,@Validated(value={IAddAndModifyCustomer.class}) Customer customer,BindingResult bindingResult) throws Exception{
 		//进行数据校验
 		if (bindingResult.hasErrors()) {
-			// 获取错误信息
 			List<ObjectError> allErrors = bindingResult.getAllErrors();
-			// 将错误信息传到页面
 			model.addAttribute("allErrors", allErrors);
-			//回显之前填写的数据
 			model.addAttribute("custadd", customer);		
-			// 出错回到商品添加页面
 			return "customer/addCust";
 		}
 		//传入的preference是String[]需要做自定义类型绑定的转换
@@ -54,7 +52,7 @@ public class CustomerController {
 	@RequestMapping("showCustomer")
 	public String showCustomer(HttpServletRequest request) throws Exception{
 		
-		int targetpage=Integer.parseInt(request.getParameter("targetpage"));
+		int targetpage=request.getParameter("targetpage")==null?1:Integer.parseInt(request.getParameter("targetpage"));
 		Page page =customerService.findCustShowInPage(targetpage, request.getSession().getAttribute("page"));
 		//放置到session域，可以在一次会话中记忆上一次查询的页。
 		request.getSession().setAttribute("page", page);
@@ -73,16 +71,12 @@ public class CustomerController {
 
 	
 	@RequestMapping("updateCustomer")
-	public String updateCustomer(Model model,@Validated ModifyCustomer modifyCustomer,BindingResult bindingResult) throws Exception{
+	public String updateCustomer(Model model,@Validated(value={IAddAndModifyCustomer.class}) ModifyCustomer modifyCustomer,BindingResult bindingResult) throws Exception{
 		//进行数据校验
 		if (bindingResult.hasErrors()) {
-			// 获取错误信息
 			List<ObjectError> allErrors = bindingResult.getAllErrors();
-			// 将错误信息传到页面
 			model.addAttribute("allErrors", allErrors);
-			//回显之前填写的数据
 			model.addAttribute("modifyCustomer", modifyCustomer);		
-			// 出错回到商品添加页面
 			return "customer/modifyCust";
 		}
 		customerService.updateCust(modifyCustomer);
@@ -107,4 +101,18 @@ public class CustomerController {
 		return "redirect:showCustomer.action?targetpage="+targetpage;
 	}
 	
+	@RequestMapping("findCustomerByConds")
+	public String findCustomerByConds(HttpServletRequest request,Model model,@Validated(value={IFindCustomerByConds.class})Customer customer,BindingResult bindingResult) throws Exception{
+		//进行数据校验
+		if (bindingResult.hasErrors()) {
+			List<ObjectError> allErrors = bindingResult.getAllErrors();
+			model.addAttribute("allErrors", allErrors);
+			model.addAttribute("customerConds", customer);
+			int targetpage = ((Page)request.getSession().getAttribute("page")).getThispage();
+			return "forward:showCustomer.action";
+		}
+		List<Customer> listByConds =customerService.findCustomerByConds(customer);
+		model.addAttribute("listByConds", listByConds);
+		return  "customer/listCondsCust";
+	}
 }

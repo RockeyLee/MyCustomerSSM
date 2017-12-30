@@ -352,7 +352,13 @@
     select * from customer
   </select>
   
+
   <select id="findCustDividePage" resultType="customer" parameterType="page" >
-    select * from customer limit #{frompage},#{rowpage}
+    select * from customer where id >=(Select id From customer Order By id limit #{frompage},1) limit #{rowpage}
   </select>
+  
+  <select id="findCustomerByConds" resultType="customer" parameterType="customer">
+    select * from customer where name=#{name} and cellphone=#{cellphone}
+  </select>
+  
 </mapper>

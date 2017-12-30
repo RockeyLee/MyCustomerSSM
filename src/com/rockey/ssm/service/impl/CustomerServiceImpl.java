@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.rockey.ssm.exception.CustomException;
 import com.rockey.ssm.mapper.CustomerMapper;
 import com.rockey.ssm.po.Customer;
 import com.rockey.ssm.po.Page;
@@ -19,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 		// TODO Auto-generated method stub
 		int result = customerMapper.insert(customer);
 		if(result<=0)
-			throw new RuntimeException("插入失败");
+			throw new CustomException("插入失败");
 	}
 
 	public void batchDelCustById(String[] delIds) throws Exception {
@@ -28,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
 			int id = Integer.parseInt(delIds[i]);
 			int result = customerMapper.deleteByPrimaryKey(id);
 			if(result<=0)
-				throw new RuntimeException("批量删除失败");
+				throw new CustomException("批量删除失败");
 		}
 		// TODO Auto-generated method stub
 		
@@ -39,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
 		int id = Integer.parseInt(custId);
 		int result = customerMapper.deleteByPrimaryKey(id);
 		if(result<=0)
-			throw new RuntimeException("删除失败");
+			throw new CustomException("删除失败");
 	}
 
 	public List<Customer> findAllCust() throws Exception {
@@ -57,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
 		// TODO Auto-generated method stub
 		int result = customerMapper.updateByPrimaryKey(customer);
 		if(result<=0)
-			throw new RuntimeException("插入失败");
+			throw new CustomException("插入失败");
 	}
 
 	public Page findCustShowInPage(int targetpage, Object object)
@@ -96,6 +97,16 @@ public class CustomerServiceImpl implements CustomerService {
 		List<Customer> list = customerMapper.findCustDividePage(page);
 		page.setList(list);
 		return page;
+	}
+
+	public List<Customer> findCustomerByConds(Customer customer)
+			throws Exception {
+		// TODO Auto-generated method stub
+		List<Customer> list =customerMapper.findCustomerByConds(customer);
+		if(list==null||list.size()==0){
+			throw new CustomException("未查到此数据");
+		}
+		return list;
 	}
 
 }

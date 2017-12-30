@@ -27,61 +27,17 @@
   </head>
   <body style="text-align: center;">
   	<h1>客户列表页面</h1><hr>
-  	<!--  <form action="${pageContext.request.contextPath }/servlet/FindCustByCondServlet" method="POST">
-  		客户姓名:<input type="text" name="name" value="${param.name }"/>
-  		客户性别:
-  				<input type="radio" name="gender" value="男"
-  						<c:if test="${param.gender=='男' }">checked='checked'</c:if>
-  					/>男
-  					<input type="radio" name="gender" value="女"
-  						<c:if test="${param.gender=='女' }">checked='checked'</c:if>
-  					/>女
-  					<input type="radio" name="gender" value=""/>无
-  		客户类型:
-	  			<select name="type">
-					<option value=""
-						<c:if test="${param.type=='' }">
-							 selected="selected"
-						</c:if>
-					></option>
-					<option value="钻石客户"
-						<c:if test="${param.type=='钻石客户' }">
-							 selected="selected"
-						</c:if>
-					>钻石客户</option>
-					<option value="白金客户"
-						<c:if test="${param.type=='白金客户' }">
-							 selected="selected"
-						</c:if>
-					>白金客户</option>
-					<option value="黄金客户"
-						<c:if test="${param.type=='黄金客户' }">
-							 selected="selected"
-						</c:if>
-					>黄金客户</option>
-					<option value="白银客户"
-						<c:if test="${param.type=='白银客户' }">
-							 selected="selected"
-						</c:if>
-					>白银客户</option>
-					<option value="青铜客户"
-						<c:if test="${param.type=='青铜客户' }">
-							 selected="selected"
-						</c:if>
-					>青铜客户</option>
-					<option value="黑铁客户"
-						<c:if test="${param.type=='黑铁客户' }">
-							 selected="selected"
-						</c:if>
-					>黑铁客户</option>
-					<option value="没牌客户"
-						<c:if test="${param.type=='没牌客户' }">
-							 selected="selected"
-						</c:if>
-					>没牌客户</option>
-				</select>
-		<input type="submit" value="条件查询客户"/>
-  	</form>-->
+  	<!-- 显示错误信息 -->
+		<c:if test="${allErrors!=null }">
+			<c:forEach items="${allErrors }" var="error">
+				${ error.defaultMessage}<br />
+			</c:forEach>
+		</c:if>
+  	<form action="${pageContext.request.contextPath }/customer/findCustomerByConds.action" method="POST">
+  		客户姓名:<input type="text" name="name" value="${customerConds.name}"/>
+  		客户电话：<input type="text" name="cellphone" value="${customerConds.cellphone}"/>
+		<input type="submit" value="查询客户"/>
+  	</form>
   	<form action="${pageContext.request.contextPath}/customer/batchDelelteCustomers.action" method="POST">
   	<table border="1" width="100%">
   		<tr>

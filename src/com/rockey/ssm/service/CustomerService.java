@@ -57,4 +57,11 @@ public interface CustomerService {
 	 * @return Page
 	 */
 	Page findCustShowInPage(int targetpage, Object object)throws Exception; 
+	
+	/**
+	 * @param customer
+	 * @return List<Customer>
+	 * @throws Exception
+	 */
+	List<Customer> findCustomerByConds(Customer customer)throws Exception; 
 }

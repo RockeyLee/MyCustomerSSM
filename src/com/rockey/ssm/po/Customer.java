@@ -2,6 +2,8 @@ package com.rockey.ssm.po;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
+import com.rockey.ssm.controller.validation.IFindCustomerByConds;
 
 public class Customer {
     /**
@@ -18,7 +20,7 @@ public class Customer {
      *
      * @mbggenerated Wed Dec 27 22:51:57 CST 2017
      */
-    @Size(min=3,max=20,message="{customer.name.length.wrong}")
+    @Size(min=3,max=20,message="{customer.name.length.wrong}",groups={IAddAndModifyCustomer.class,IFindCustomerByConds.class})
     private String name;
 
     /**
@@ -43,7 +45,7 @@ public class Customer {
      *
      * @mbggenerated Wed Dec 27 22:51:57 CST 2017
      */
-    @Size(min=3,max=20,message="{customer.name.length.wrong}")
+    @Size(min=3,max=20,message="{customer.name.length.wrong}",groups={IAddAndModifyCustomer.class,IFindCustomerByConds.class})
     private String cellphone;
 
     /**
@@ -76,7 +78,7 @@ public class Customer {
      *
      * @mbggenerated Wed Dec 27 22:51:57 CST 2017
      */
-    @Size(min=0,max=255,message="{customer.description.length.wrong}")
+    @Size(min=0,max=255,message="{customer.description.length.wrong}",groups={IAddAndModifyCustomer.class})
     private String description;
 
     /**
