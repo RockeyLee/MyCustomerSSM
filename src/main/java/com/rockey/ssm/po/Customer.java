@@ -2,6 +2,7 @@ package com.rockey.ssm.po;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 import com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
 import com.rockey.ssm.controller.validation.IFindCustomerByConds;
 

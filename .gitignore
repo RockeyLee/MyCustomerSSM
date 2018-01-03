@@ -1,0 +1,8 @@
+# ignore .myeclipse
+.myeclipse
+
+# ignore .settings
+.settings
+
+# ignore target
+target
