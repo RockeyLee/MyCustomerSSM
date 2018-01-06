@@ -2,8 +2,8 @@
 <project-module
   type="WEB"
   name="MyCustomerSSM"
-  id="myeclipse.1514355618649"
-  context-root="/MyCustomerSSM"
+  id="myeclipse.1514961166439"
+  context-root="/MyCustomerMaven"
   j2ee-spec="5.0"
   archive="MyCustomerSSM.war">
   <attributes>
