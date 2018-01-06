@@ -15,8 +15,8 @@
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 
 	<!-- 配置Service -->
-	<bean id="customerService" class="com.rockey.ssm.service.impl.CustomerServiceImpl"></bean>
-	<bean id="userService" class="com.rockey.ssm.service.impl.UserServiceImpl"></bean>
+	<bean id="customerService" class="main.java.com.rockey.ssm.service.impl.CustomerServiceImpl"></bean>
+	<bean id="userService" class="main.java.com.rockey.ssm.service.impl.UserServiceImpl"></bean>
 	
 	<!-- 配置事务管理 -->
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -38,6 +38,6 @@
 	
 	<!-- 配置aop -->
 	<aop:config>
-		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.rockey.ssm.service.impl.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* main.java.com.rockey.ssm.service.impl.*.*(..))"/>
 	</aop:config>
 </beans>

@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 配置别名 -->
 	<typeAliases>
-		<package name="com.rockey.ssm.po"/>
+		<package name="main.java.com.rockey.ssm.po"/>
 	</typeAliases>
 	
 </configuration>
