@@ -2,7 +2,13 @@
 .myeclipse
 
 # ignore .settings
-.settings
+/.settings
 
 # ignore target
-target
+/target
+
+# ignore .project
+.project
+
+# ignore .classpath
+.classpath
