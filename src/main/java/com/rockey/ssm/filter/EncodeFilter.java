@@ -1,4 +1,4 @@
-package com.rockey.ssm.filter;
+package main.java.com.rockey.ssm.filter;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

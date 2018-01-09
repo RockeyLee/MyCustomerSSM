@@ -1,4 +1,4 @@
-package com.rockey.ssm.controller;
+package main.java.com.rockey.ssm.controller;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
-import com.rockey.ssm.controller.validation.IFindCustomerByConds;
-import com.rockey.ssm.po.Customer;
-import com.rockey.ssm.po.ModifyCustomer;
-import com.rockey.ssm.po.Page;
-import com.rockey.ssm.service.CustomerService;
-import com.rockey.ssm.util.BasicUtil;
+import main.java.com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
+import main.java.com.rockey.ssm.controller.validation.IFindCustomerByConds;
+import main.java.com.rockey.ssm.po.Customer;
+import main.java.com.rockey.ssm.po.ModifyCustomer;
+import main.java.com.rockey.ssm.po.Page;
+import main.java.com.rockey.ssm.service.CustomerService;
+import main.java.com.rockey.ssm.util.BasicUtil;
 
 @Controller
 @RequestMapping("customer")

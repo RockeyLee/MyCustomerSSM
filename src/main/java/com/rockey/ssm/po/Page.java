@@ -1,8 +1,8 @@
-package com.rockey.ssm.po;
+package main.java.com.rockey.ssm.po;
 
 import java.util.List;
 
-import com.rockey.ssm.util.BasicUtil;
+import main.java.com.rockey.ssm.util.BasicUtil;
 
 
 public class Page extends Customer {

@@ -1,4 +1,4 @@
-package com.rockey.ssm.exception;
+package main.java.com.rockey.ssm.exception;
 
 public class CustomException extends Exception {
 	

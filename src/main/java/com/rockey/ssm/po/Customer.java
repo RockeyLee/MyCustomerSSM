@@ -1,12 +1,12 @@
-package com.rockey.ssm.po;
+package main.java.com.rockey.ssm.po;
 
 import java.io.Serializable;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
-import com.rockey.ssm.controller.validation.IFindCustomerByConds;
+import main.java.com.rockey.ssm.controller.validation.IAddAndModifyCustomer;
+import main.java.com.rockey.ssm.controller.validation.IFindCustomerByConds;
 
 public class Customer implements Serializable{
     /**

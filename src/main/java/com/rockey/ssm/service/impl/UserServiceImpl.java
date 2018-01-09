@@ -2,9 +2,9 @@ package main.java.com.rockey.ssm.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.rockey.ssm.mapper.UserMapper;
-import com.rockey.ssm.po.User;
-import com.rockey.ssm.service.UserService;
+import main.java.com.rockey.ssm.mapper.UserMapper;
+import main.java.com.rockey.ssm.po.User;
+import main.java.com.rockey.ssm.service.UserService;
 
 public class UserServiceImpl implements UserService {
 	

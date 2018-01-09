@@ -1,4 +1,4 @@
-package com.rockey.ssm.controller.convert;
+package main.java.com.rockey.ssm.controller.convert;
 
 import org.springframework.core.convert.converter.Converter;
 

@@ -1,8 +1,8 @@
-package com.rockey.ssm.mapper;
+package main.java.com.rockey.ssm.mapper;
 
-import com.rockey.ssm.po.Customer;
-import com.rockey.ssm.po.CustomerExample;
-import com.rockey.ssm.po.Page;
+import main.java.com.rockey.ssm.po.Customer;
+import main.java.com.rockey.ssm.po.CustomerExample;
+import main.java.com.rockey.ssm.po.Page;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

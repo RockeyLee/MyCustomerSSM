@@ -1,6 +1,8 @@
-package com.rockey.ssm.service;
+package main.java.com.rockey.ssm.service;
 
-import com.rockey.ssm.po.User;
+import main.java.com.rockey.ssm.po.User;
+
+
 
 public interface UserService {
 

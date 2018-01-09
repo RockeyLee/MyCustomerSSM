@@ -1,4 +1,4 @@
-package com.rockey.ssm.po;
+package main.java.com.rockey.ssm.po;
 
 public class ModifyCustomer extends Customer {
 	

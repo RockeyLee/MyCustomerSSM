@@ -1,4 +1,4 @@
-package com.rockey.ssm.exception;
+package main.java.com.rockey.ssm.exception;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

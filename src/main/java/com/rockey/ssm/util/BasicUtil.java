@@ -1,4 +1,4 @@
-package com.rockey.ssm.util;
+package main.java.com.rockey.ssm.util;
 
 import java.io.FileReader;
 import java.util.Properties;

@@ -1,9 +1,9 @@
-package com.rockey.ssm.service;
+package main.java.com.rockey.ssm.service;
 
 import java.util.List;
 
-import com.rockey.ssm.po.Customer;
-import com.rockey.ssm.po.Page;
+import main.java.com.rockey.ssm.po.Customer;
+import main.java.com.rockey.ssm.po.Page;
 
 
 public interface CustomerService {

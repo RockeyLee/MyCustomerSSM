@@ -1,4 +1,4 @@
-package com.rockey.ssm.controller;
+package main.java.com.rockey.ssm.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,10 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.rockey.ssm.po.User;
-import com.rockey.ssm.po.UserRegister;
-import com.rockey.ssm.service.CustomerService;
-import com.rockey.ssm.service.UserService;
+import main.java.com.rockey.ssm.service.CustomerService;
+import main.java.com.rockey.ssm.service.UserService;
+import main.java.com.rockey.ssm.po.UserRegister;
+import main.java.com.rockey.ssm.po.User;
 
 @Controller
 @RequestMapping("user")

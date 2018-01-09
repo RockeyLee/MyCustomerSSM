@@ -1,7 +1,7 @@
-package com.rockey.ssm.mapper;
+package main.java.com.rockey.ssm.mapper;
 
-import com.rockey.ssm.po.User;
-import com.rockey.ssm.po.UserExample;
+import main.java.com.rockey.ssm.po.User;
+import main.java.com.rockey.ssm.po.UserExample;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

@@ -1,4 +1,4 @@
-package com.rockey.ssm.po;
+package main.java.com.rockey.ssm.po;
 
 import java.io.Serializable;
 
